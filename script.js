@@ -1,6 +1,6 @@
-
+```javascript
 const symbols = [
-     "🐶","🐶",
+  "🐶","🐶",
   "🐱","🐱",
   "🐭","🐭",
   "🐹","🐹",
@@ -15,40 +15,50 @@ const symbols = [
   "🐷","🐷",
   "🐸","🐸",
   "🐵","🐵"
-    ];
+];
 
-    let firstCard = null;
-    let secondCard = null;
-    let lock = false;
+let firstCard = null;
+let secondCard = null;
+let lock = false;
+let matchedPairs = 0;
 
-    function shuffle(array) {
-      for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-      }
-    }
+const totalPairs = symbols.length / 2;
 
-    function createGame() {
-      const game = document.getElementById("game");
-      game.innerHTML = "";
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
 
-      const shuffled = [...symbols];
-      shuffle(shuffled);
+function createGame() {
+  const game = document.getElementById("game");
+  game.innerHTML = "";
 
-      shuffled.forEach(symbol => {
-        const card = document.createElement("div");
-        card.classList.add("card");
+  const shuffled = [...symbols];
+  shuffle(shuffled);
 
-        card.dataset.symbol = symbol;
+  shuffled.forEach(symbol => {
+    const card = document.createElement("div");
 
-        card.addEventListener("click", () => flipCard(card));
+    card.classList.add("card");
+    card.dataset.symbol = symbol;
 
-        game.appendChild(card);
-      });
-    }
+    card.addEventListener("click", () => flipCard(card));
 
-   function flipCard(card) {
-  if (lock || card.classList.contains("flipped")) return;
+    game.appendChild(card);
+  });
+}
+
+function flipCard(card) {
+  if (
+    lock ||
+    card.classList.contains("flipped") ||
+    card.classList.contains("matched")
+  ) {
+    return;
+  }
+
   if (card === firstCard) return;
 
   card.classList.add("flipped");
@@ -62,39 +72,48 @@ const symbols = [
   }
 }
 
-    function checkMatch() {
-      if (firstCard.dataset.symbol === secondCard.dataset.symbol) {
-        firstCard = null;
-        secondCard = null;
-      } else {
-        lock = true;
+function checkMatch() {
+  if (firstCard.dataset.symbol === secondCard.dataset.symbol) {
 
-        setTimeout(() => {
-          firstCard.classList.remove("flipped");
-          secondCard.classList.remove("flipped");
+    firstCard.classList.add("matched");
+    secondCard.classList.add("matched");
 
-          firstCard.innerHTML = "";
-          secondCard.innerHTML = "";
+    matchedPairs++;
 
-          firstCard = null;
-          secondCard = null;
-          lock = false;
-        }, 800);
-      }
+    if (matchedPairs === totalPairs) {
+      setTimeout(() => {
+        alert("🎉 Parabéns! Você venceu!");
+      }, 300);
     }
 
-    document.getElementById("restartBtn").addEventListener("click", () => {
+    firstCard = null;
+    secondCard = null;
+
+  } else {
+
+    lock = true;
+
+    setTimeout(() => {
+      firstCard.classList.remove("flipped");
+      secondCard.classList.remove("flipped");
+
+      firstCard.textContent = "";
+      secondCard.textContent = "";
+
       firstCard = null;
       secondCard = null;
       lock = false;
-      createGame();
-    });
-
-    createGame();
-
+    }, 800);
+  }
+}
 
 document.getElementById("restartBtn").addEventListener("click", () => {
+  firstCard = null;
+  secondCard = null;
+  lock = false;
+  matchedPairs = 0;
   createGame();
 });
 
 createGame();
+```
