@@ -1,4 +1,4 @@
-```javascript
+
 const symbols = [
   "🐶","🐶",
   "🐱","🐱",
@@ -116,4 +116,3 @@ document.getElementById("restartBtn").addEventListener("click", () => {
 });
 
 createGame();
-```
