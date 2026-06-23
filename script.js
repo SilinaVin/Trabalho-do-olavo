@@ -1,19 +1,20 @@
+
 const symbols = [
-      "https://pbs.twimg.com/media/GmSpd61WgAAr-9K.jpg",
-  "https://pbs.twimg.com/media/GmSpd61WgAAr-9K.jpg",
-  "https://pbs.twimg.com/media/HKV7DspWwAAsnBB?format=jpg&name=small",
-  "https://pbs.twimg.com/media/HKV7DspWwAAsnBB?format=jpg&name=small",
-  "https://pbs.twimg.com/media/HJwEJJLW0AAcj6r?format=jpg&name=small",
-  "https://pbs.twimg.com/media/HJwEJJLW0AAcj6r?format=jpg&name=small",
-  "https://pbs.twimg.com/media/G9YbcSLXAAAdQYj?format=jpg&name=900x900",
-      "https://pbs.twimg.com/media/G9YbcSLXAAAdQYj?format=jpg&name=900x900",
-      "https://pbs.twimg.com/media/GnkzLr-WEAAUxSE?format=jpg&name=900x900","https://pbs.twimg.com/media/GnkzLr-WEAAUxSE?format=jpg&name=900x900",
-      "https://pbs.twimg.com/media/Gp_FElCXUAArCJ6?format=jpg&name=small","https://pbs.twimg.com/media/Gp_FElCXUAArCJ6?format=jpg&name=small",
-      "https://pbs.twimg.com/media/HK1xNWCW8AAN-Li?format=png&name=900x900","https://pbs.twimg.com/media/HK1xNWCW8AAN-Li?format=png&name=900x900"
-      ,"https://pbs.twimg.com/media/G35ZpjcWcAAIr4O?format=jpg&name=small","https://pbs.twimg.com/media/G35ZpjcWcAAIr4O?format=jpg&name=small","https://pbs.twimg.com/media/HKtsZLWWwAA5PuG?format=jpg&name=360x360",
-      "https://pbs.twimg.com/media/HKtsZLWWwAA5PuG?format=jpg&name=360x360","https://pbs.twimg.com/media/HJweLuYXsAEyYue?format=jpg&name=small","https://pbs.twimg.com/media/HJweLuYXsAEyYue?format=jpg&name=small"
-      ,"https://pbs.twimg.com/media/GpzvoRMX0AMcnMd?format=jpg&name=360x360","https://pbs.twimg.com/media/GpzvoRMX0AMcnMd?format=jpg&name=360x360","https://pbs.twimg.com/media/GdvvFzJWgAAFGCI?format=jpg&name=small",
-      "https://pbs.twimg.com/media/GdvvFzJWgAAFGCI?format=jpg&name=small","https://pbs.twimg.com/media/HK8GUHoWEAES_3q?format=jpg&name=900x900"
+     "🐶","🐶",
+  "🐱","🐱",
+  "🐭","🐭",
+  "🐹","🐹",
+  "🐰","🐰",
+  "🦊","🦊",
+  "🐻","🐻",
+  "🐼","🐼",
+  "🐨","🐨",
+  "🐯","🐯",
+  "🦁","🦁",
+  "🐮","🐮",
+  "🐷","🐷",
+  "🐸","🐸",
+  "🐵","🐵"
     ];
 
     let firstCard = null;
