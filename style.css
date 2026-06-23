@@ -1,7 +1,7 @@
 body {
   font-family: Arial, sans-serif;
   text-align: center;
-  background: #154;
+  background: #89CFF0;
   color: white;
   margin: 0;
   padding: 20px;
@@ -36,7 +36,7 @@ h1 {
 .card {
   width: 110px;
   height: 110px;
-  background: #333;
+  background: #4682B4;
   border-radius: 8px;
   cursor: pointer;
   overflow: hidden;
