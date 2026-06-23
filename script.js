@@ -14,7 +14,6 @@ const symbols = [
       "https://pbs.twimg.com/media/HKtsZLWWwAA5PuG?format=jpg&name=360x360","https://pbs.twimg.com/media/HJweLuYXsAEyYue?format=jpg&name=small","https://pbs.twimg.com/media/HJweLuYXsAEyYue?format=jpg&name=small"
       ,"https://pbs.twimg.com/media/GpzvoRMX0AMcnMd?format=jpg&name=360x360","https://pbs.twimg.com/media/GpzvoRMX0AMcnMd?format=jpg&name=360x360","https://pbs.twimg.com/media/GdvvFzJWgAAFGCI?format=jpg&name=small",
       "https://pbs.twimg.com/media/GdvvFzJWgAAFGCI?format=jpg&name=small","https://pbs.twimg.com/media/HK8GUHoWEAES_3q?format=jpg&name=900x900"
-];
     ];
 
     let firstCard = null;
@@ -92,29 +91,6 @@ const symbols = [
 
     createGame();
 
-
-function createGame() {
-  const game = document.getElementById("game");
-
-  game.innerHTML = ""; 
-
-  firstCard = null;
-  secondCard = null;
-  lock = false;
-
-  shuffle(symbols);
-
-  symbols.forEach(symbol => {
-    const card = document.createElement("div");
-    card.classList.add("card");
-
-    card.dataset.symbol = symbol;
-
-    card.addEventListener("click", () => flipCard(card));
-
-    game.appendChild(card);
-  });
-}
 
 document.getElementById("restartBtn").addEventListener("click", () => {
   createGame();
