@@ -47,20 +47,20 @@ const symbols = [
       });
     }
 
-    function flipCard(card) {
-      if (lock || card.classList.contains("flipped")) return;
-      if (card === firstCard) return;
+   function flipCard(card) {
+  if (lock || card.classList.contains("flipped")) return;
+  if (card === firstCard) return;
 
-      card.classList.add("flipped");
-      card.innerHTML = `<img src="${card.dataset.symbol}">`;
+  card.classList.add("flipped");
+  card.textContent = card.dataset.symbol;
 
-      if (!firstCard) {
-        firstCard = card;
-      } else {
-        secondCard = card;
-        checkMatch();
-      }
-    }
+  if (!firstCard) {
+    firstCard = card;
+  } else {
+    secondCard = card;
+    checkMatch();
+  }
+}
 
     function checkMatch() {
       if (firstCard.dataset.symbol === secondCard.dataset.symbol) {
