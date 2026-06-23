@@ -27,7 +27,7 @@ h1 {
 
 #game {
   display: grid;
-  grid-template-columns: repeat(5, 110px);
+  grid-template-columns: repeat(6, 110px);
   gap: 8px;
   justify-content: center;
   margin-top: 30px;
