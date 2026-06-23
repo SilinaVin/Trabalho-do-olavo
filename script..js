@@ -1,0 +1,28 @@
+function createGame() {
+  const game = document.getElementById("game");
+
+  game.innerHTML = ""; 
+
+  firstCard = null;
+  secondCard = null;
+  lock = false;
+
+  shuffle(symbols);
+
+  symbols.forEach(symbol => {
+    const card = document.createElement("div");
+    card.classList.add("card");
+
+    card.dataset.symbol = symbol;
+
+    card.addEventListener("click", () => flipCard(card));
+
+    game.appendChild(card);
+  });
+}
+
+document.getElementById("restartBtn").addEventListener("click", () => {
+  createGame();
+});
+
+createGame();
